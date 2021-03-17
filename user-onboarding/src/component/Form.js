@@ -1,64 +1,57 @@
 
 function Form(props) {
 
-    const submitHandler = props.onSubmit;
-    const { form } = props;
     const { onChange } = props;
+    const { name, password, email, ToS} = props;
 
 
     return (
-      <div className="Form">
-          <form name="memberForm" onSubmit={submitHandler}>
-            <label>Name:
+        <div>
+            <form>
+                <label>Name:
+                  <input
+                        type='text'
+                        id="nameInput"
+                        placeholder="Name"
+                        name="name"
+                        onChange={onChange}
+                    ></input>
+                </label>
+                <br />
+                <label>Email:
                 <input
-                    type="text"
-                    id="nameInput"
-                    placeholder="Name"
-                    maxLength="15"
-                    name="name"
-                    value={form.name}
-                    onChange={onChange}
-                />
-            </label>
-            <br />
-            <label>Email:
+                        type='text'
+                        id="emailInput"
+                        placeholder="Email"
+                        name="email"
+                        onChange={onChange}
+                    ></input>
+                </label>
+                <br />
+                <label>Password:
                 <input
-                    type="text"
-                    id="emailInput"
-                    placeholder="Email"
-                    maxLength="15"
-                    name="email"
-                    value={form.email}
-                    onChange={onChange}
-                />
-            </label>
-            <br />
-            <label>Password: 
-                <input
-                    type="text"
-                    id="passwordInput"
-                    placeholder="Password"
-                    maxLength="15"
-                    name="password"
-                    value={form.password}
-                    onChange={onChange}
-                />
-            </label>
-            <br />
-            <label>Terms of Service:
-                <input 
-                    type="checkbox"
-                    name="ToS"
-                    checked={form.ToS}
-                    onChange={onChange}
-                />
-            </label>
-            <br />
-            <input disabled={false} type="submit" value="submit"/>
-        </form>
-      </div>
+                        type='text'
+                        id="passwordInput"
+                        placeholder="Password"
+                        name="password"
+                        onChange={onChange}
+                    ></input>
+                </label>
+                <br />
+                <label>Terms of Service:
+              <input
+                        type='checkbox'
+                        id="ToSInput"
+                        checked={ToS}
+                        name="ToS"
+                        onChange={onChange}
+                    ></input>
+                </label>
+                <br />
+                <input type='submit'></input>
+            </form>
+        </div>
     );
-  }
-  
-  export default Form;
-  
+}
+
+export default Form;
