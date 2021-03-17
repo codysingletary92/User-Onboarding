@@ -2,18 +2,20 @@
 function Form(props) {
 
     const { onChange } = props;
-    const { name, password, email, ToS} = props;
+    const { name, password, email, ToS} = props.form;
+    const { onSubmit } = props;
 
 
     return (
         <div>
-            <form>
+            <form name="memberForm" onSubmit={onSubmit}>
                 <label>Name:
                   <input
                         type='text'
                         id="nameInput"
                         placeholder="Name"
                         name="name"
+                        value={name}
                         onChange={onChange}
                     ></input>
                 </label>
@@ -24,6 +26,7 @@ function Form(props) {
                         id="emailInput"
                         placeholder="Email"
                         name="email"
+                        value={email}
                         onChange={onChange}
                     ></input>
                 </label>
@@ -34,6 +37,7 @@ function Form(props) {
                         id="passwordInput"
                         placeholder="Password"
                         name="password"
+                        value={password}
                         onChange={onChange}
                     ></input>
                 </label>
@@ -48,7 +52,12 @@ function Form(props) {
                     ></input>
                 </label>
                 <br />
-                <input type='submit'></input>
+                <input 
+                    type='submit'
+                    
+                    >
+                    
+                </input>
             </form>
         </div>
     );
