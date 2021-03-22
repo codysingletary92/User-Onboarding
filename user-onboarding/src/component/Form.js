@@ -6,6 +6,19 @@ function Form(props) {
     const { onSubmit } = props;
 
 
+    <form>
+    <label>Name: 
+        <input type='text'></input>
+    </label>
+    <label>Size:
+        <input type='text'></input>
+    </label>
+    <label>Toppings
+        <input type='text'></input>
+    </label>
+    <input type='submit'>submit</input>
+</form>
+
     return (
         <div>
             <form name="memberForm" onSubmit={onSubmit}>
